@@ -55,6 +55,11 @@ describe( "The Calculator: ", function() {
     assert.equal( 0.3, calc.equals() );
   });
 
+  // it( "Should return a percentage", function() {
+  //   calc.sum( 10% );
+  //   assert( 0.1, calc.equals() );
+  // });
+
 
 });
 
