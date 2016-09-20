@@ -7,17 +7,24 @@ describe( "The Calculator: ", function() {
     calc = new Calculator();
   });
 
-  it( "Should be able to set a number", function() {
-    calc.setNumber( 2 );
-    assert.equal( 2, calc.newNumber );
+  it( "Should be able to add", function() {
+    calc.sum( 5 + 2 );
+    assert.equal( 7, calc.result );
   });
 
-  it( "Should be able to add two numbers", function() {
-    calc.setNumber( 2 );
-    calc.sum( "+" );
-    calc.setNumber( 3 );
-    calc.equals()
-    assert.equal( 5, calc.result );
+  it( "Should be able to subtract", function() {
+    calc.sum( 10 - 50 );
+    assert.equal( -40, calc.result );
   });
+
+  it( "Should be able to do multiplication", function() {
+    calc.sum( 5 * 3 );
+    assert.equal( 15, calc.result );
+  });
+
+  it( "Should be able to do division", function() {
+    calc.sum( 15 / 3 );
+    assert.equal( 5, calc.result );
+  }); 
 
 });
