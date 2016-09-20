@@ -50,6 +50,11 @@ describe( "The Calculator: ", function() {
     assert.equal( 15, calc.equals() );
   });
 
+  it( "Should ignore the float point problem", function() {
+    calc.sum( 0.1 + 0.2 );
+    assert.equal( 0.3, calc.equals() );
+  });
+
 
 });
 

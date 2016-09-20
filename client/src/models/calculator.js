@@ -18,7 +18,7 @@ Calculator.prototype = {
   },
 
   equals: function() {
-    return this.result;
+    return parseFloat( this.result ).toFixed( 8 );
   }
 
 }
