@@ -1,18 +1,19 @@
 var Calculator = function() {
   this.result = 0;
+  this.number = 0;
 }
 
 Calculator.prototype = {
 
-  add: function( array ) {
-    for( var i = 0; i < array.length; i++ ) {
-      this.result += array[i];
-    }
+  setNumber: function( number ) {
+    this.number = number; 
   },
 
-  subtract: function( array ) {
-    for( var i = 0; i < array.length; i++ ) {
-      this.result += array[i] - array[ i + 1 ];
+  sum: function( operator ) {
+    if( operator === "+") {
+      this.result += this.number;
+    } else if( operator === "-" ) {
+      this.result -= this.number;
     }
   }
 
