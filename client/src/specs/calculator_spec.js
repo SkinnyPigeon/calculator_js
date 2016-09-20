@@ -8,8 +8,13 @@ describe( "The Calculator: ", function() {
   });
 
   it( "Should be able to add numbers", function() {
-    calc.add( 2, 2 );
+    calc.add( [ 2, 2 ] );
     assert.equal( 4, calc.result );
+  });
+
+  it( "should be able to add mulitple numbers", function() {
+    calc.add( [ 2, 2, 2 ] );
+    assert.equal( 6, calc.result );
   });
 
 });
