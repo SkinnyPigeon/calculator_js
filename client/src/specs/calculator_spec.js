@@ -7,36 +7,9 @@ describe( "The Calculator: ", function() {
     calc = new Calculator();
   });
 
-  it( "Should be able to add a number", function() {
+  it( "Should be able to set a number", function() {
     calc.setNumber( 2 );
-    calc.sum( "+" );
-    assert.equal( 2, calc.result );
-  });
-
-  it( "Should be able to add mulitple numbers", function() {
-    calc.setNumber( 2 );
-    calc.sum( "+" );
-    calc.setNumber( 2 );
-    calc.sum( "+" );
-    calc.setNumber( 2 );
-    calc.sum( "+" );
-    assert.equal( 6, calc.result );
-  });
-
-  it( "Should be able to subtract a number", function() {
-    calc.setNumber( 2 );
-    calc.sum( "-" );
-    assert.equal( -2, calc.result );
-  });
-
-  it( "Should be able to subtract mulitple numbers", function() {
-    calc.setNumber( 2 );
-    calc.sum( "-" );
-    calc.setNumber( 2 );
-    calc.sum( "-" );
-    calc.setNumber( 2 );
-    calc.sum( "-" );
-    assert.equal( -6, calc.result );
+    assert.equal( 2, calc.thisNumber );
   });
 
 });
