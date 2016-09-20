@@ -15,6 +15,10 @@ Calculator.prototype = {
 
   resetMemory: function() {
     this.memory = 0;
+  },
+
+  equals: function() {
+    return this.result;
   }
 
 }

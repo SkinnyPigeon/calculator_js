@@ -45,6 +45,11 @@ describe( "The Calculator: ", function() {
     assert.equal( 0, calc.memory );
   });
 
+  it( "Should be able to return the result", function() {
+    calc.sum( 3 + 2 * 6 );
+    assert.equal( 15, calc.equals() );
+  });
+
 
 });
 
