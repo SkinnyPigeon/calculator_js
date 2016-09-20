@@ -32,4 +32,29 @@ describe( "The Calculator: ", function() {
     assert.equal( 15, calc.result );
   }); 
 
+  it( "Should be able to store things in memory", function() {
+    calc.sum( 3 + 2 * 6 );
+    calc.setMemory();
+    assert.equal( 15, calc.memory );
+  });
+
+  it( "Should be able to reset the memory", function() {
+    calc.sum( 3 + 2 * 6 );
+    calc.setMemory();
+    calc.resetMemory();
+    assert.equal( 0, calc.memory );
+  });
+
+
 });
+
+
+
+
+
+
+
+
+
+
+
