@@ -25,6 +25,11 @@ describe( "The Calculator: ", function() {
   it( "Should be able to do division", function() {
     calc.sum( 15 / 3 );
     assert.equal( 5, calc.result );
+  });
+
+  it( "Should do multiplication before addition", function() {
+    calc.sum( 3 + 2 * 6 );
+    assert.equal( 15, calc.result );
   }); 
 
 });
