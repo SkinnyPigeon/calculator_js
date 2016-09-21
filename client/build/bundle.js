@@ -66,7 +66,6 @@
 	  this.calculatorSpace = document.getElementById( 'calculator' );
 	  this.screen = document.createElement( 'input' );
 	  this.screen.id = "screen";
-	  this.calculatorSpace.appendChild( this.screen );
 	}
 	
 	CalculatorView.prototype = {
@@ -74,7 +73,6 @@
 	  display: function() {
 	
 	    var numberButtons = [ ".", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "+", "-", "*", "/" ];
-	    var extraFunctionButtons = [ "+/-", "%", "M+", "MR", "MC" ]
 	
 	    for( var i = 0; i < numberButtons.length; i++ ) {
 	      var eachNumberButton = document.createElement( 'button' );
@@ -138,6 +136,8 @@
 	      this.screen.value = "";
 	    }.bind( this );
 	
+	  this.calculatorSpace.appendChild( this.screen );
+	
 	
 	  },
 	
@@ -175,9 +175,16 @@
 	  },
 	
 	  equals: function() {
-	    var answer = eval( this.result );
-	    this.result = parseFloat(( answer ).toFixed(8));
-	    return this.result;
+	    try {
+	      var answer = eval( this.result );
+	      this.result = parseFloat(( answer ).toFixed(8));
+	      return this.result;
+	    }
+	    catch( err ) {
+	      window.alert( "Unexpected Character" );
+	      return this.result;
+	    }
+	
 	  },
 	
 	

@@ -18,9 +18,16 @@ Calculator.prototype = {
   },
 
   equals: function() {
-    var answer = eval( this.result );
-    this.result = parseFloat(( answer ).toFixed(8));
-    return this.result;
+    try {
+      var answer = eval( this.result );
+      this.result = parseFloat(( answer ).toFixed(8));
+      return this.result;
+    }
+    catch( err ) {
+      window.alert( "Unexpected Character" );
+      return this.result;
+    }
+
   },
 
 

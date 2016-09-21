@@ -5,7 +5,6 @@ var CalculatorView = function() {
   this.calculatorSpace = document.getElementById( 'calculator' );
   this.screen = document.createElement( 'input' );
   this.screen.id = "screen";
-  this.calculatorSpace.appendChild( this.screen );
 }
 
 CalculatorView.prototype = {
@@ -13,7 +12,6 @@ CalculatorView.prototype = {
   display: function() {
 
     var numberButtons = [ ".", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "+", "-", "*", "/" ];
-    var extraFunctionButtons = [ "+/-", "%", "M+", "MR", "MC" ]
 
     for( var i = 0; i < numberButtons.length; i++ ) {
       var eachNumberButton = document.createElement( 'button' );
@@ -76,6 +74,8 @@ CalculatorView.prototype = {
       this.calc.resetMemory();
       this.screen.value = "";
     }.bind( this );
+
+  this.calculatorSpace.appendChild( this.screen );
 
 
   },
