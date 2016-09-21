@@ -57,7 +57,12 @@ describe( "The Calculator: ", function() {
 
   it( "Should handle an infinity error", function() {
     calc.sum( 7 / 0 );
-    assert( "infinity", calc.equals() );
+    assert.equal( Infinity, calc.equals() );
+  });
+
+  it( "Should handle non numerical characters", function() {
+    calc.sum( 4 * "👻" );
+    assert.deepEqual( NaN, calc.equals() );
   });
 
 
