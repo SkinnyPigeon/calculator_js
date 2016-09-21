@@ -3,7 +3,8 @@ var Calculator = require( '../models/calculator' );
 var CalculatorView = function() {
   this.calc = new Calculator();
   this.calculatorSpace = document.getElementById( 'calculator' );
-  this.screen = document.createElement( 'h4' );
+  this.screen = document.createElement( 'input' );
+  this.screen.id = "screen";
   this.calculatorSpace.appendChild( this.screen );
 }
 
@@ -28,10 +29,11 @@ CalculatorView.prototype = {
     var clearButton = document.createElement( 'button' );
     clearButton.innerHTML = "C"; 
     clearButton.id = "C";
-    clearButton.onclick = function(e) {
-      this.screen.innerHTML = ""
-    }.bind( this );
     this.calculatorSpace.appendChild( clearButton );
+
+    clearButton.onclick = function(e) {
+      this.screen.value = ""
+    }.bind( this );
 
     var equalsButton = document.createElement( 'button' );
     equalsButton.innerHTML = "="; 
@@ -39,18 +41,48 @@ CalculatorView.prototype = {
     this.calculatorSpace.appendChild( equalsButton );
     
     equalsButton.onclick = function(e) {
-      var question = this.screen.innerHTML;
+      var question = this.screen.value;
       this.calc.sum( question );
       var answer = this.calc.equals();
-      this.screen.innerHTML = answer;
+      this.screen.value = answer;
       this.calculatorSpace.appendChild( this.screen );
     }.bind( this );
+
+    var memPlusButton = document.createElement( 'button' );
+    memPlusButton.innerHTML = "M+";
+    memPlusButton.id = "M+";
+    this.calculatorSpace.appendChild( memPlusButton );
+
+    memPlusButton.onclick = function(e) {
+      this.calc.setMemory();
+    }.bind( this );
+
+    var memRecallButton = document.createElement( 'button' );
+    memRecallButton.innerHTML = "MR";
+    memRecallButton.id = "MR";
+    this.calculatorSpace.appendChild( memRecallButton );
+
+    memRecallButton.onclick = function(e) {
+      var answer = this.calc.memory;
+      this.screen.value = answer;
+    }.bind( this );
+
+    var allClearButton = document.createElement( 'button' );
+    allClearButton.innerHTML = "AC";
+    allClearButton.id = "AC";
+    this.calculatorSpace.appendChild( allClearButton );
+
+    allClearButton.onclick = function(e) {
+      this.calc.resetMemory();
+      this.screen.value = "";
+    }.bind( this );
+
 
   },
 
   handleNumberButtonClick: function( id ) {
-    this.currentScreen = this.screen.innerHTML
-    this.screen.innerHTML = this.currentScreen + id;
+    this.currentScreen = this.screen.value
+    this.screen.value = this.currentScreen + id;
     this.calculatorSpace.appendChild( this.screen );
   }
 

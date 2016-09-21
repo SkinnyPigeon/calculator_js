@@ -1,6 +1,6 @@
 var Calculator = function() {
   this.result = 0;
-  this.memory = 0;
+  this.memory = "";
 }
 
 Calculator.prototype = {
@@ -14,12 +14,13 @@ Calculator.prototype = {
   },
 
   resetMemory: function() {
-    this.memory = 0;
+    this.memory = "";
   },
 
   equals: function() {
-    var answer = eval( this.result ) ;
-    return parseFloat(( answer ).toFixed(8));
+    var answer = eval( this.result );
+    this.result = parseFloat(( answer ).toFixed(8));
+    return this.result;
   },
 
 
