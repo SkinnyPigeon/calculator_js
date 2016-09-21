@@ -18,8 +18,11 @@ Calculator.prototype = {
   },
 
   equals: function() {
-    return parseFloat( this.result ).toFixed( 8 );
-  }
+    var answer = eval( this.result ) ;
+    return parseFloat(( answer ).toFixed(8));
+  },
+
+
 
 }
 
