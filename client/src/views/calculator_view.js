@@ -11,7 +11,7 @@ CalculatorView.prototype = {
 
   display: function() {
 
-    var numberButtons = [ ".", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "+", "-", "*", "/" ];
+    var numberButtons = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, ".", "+", "-", "*", "/" ];
 
     for( var i = 0; i < numberButtons.length; i++ ) {
       var eachNumberButton = document.createElement( 'button' );
@@ -35,7 +35,7 @@ CalculatorView.prototype = {
 
     var equalsButton = document.createElement( 'button' );
     equalsButton.innerHTML = "="; 
-    equalsButton.id = "=";
+    equalsButton.id = "equals";
     this.calculatorSpace.appendChild( equalsButton );
     
     equalsButton.onclick = function(e) {

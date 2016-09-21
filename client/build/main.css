@@ -1,11 +1,30 @@
+#calculator {
+  width: 180px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
 body button {
- font-size: 1em;
+  width: 60px;
+  height: 60px;
+}
+
+#calculator button#equals {
+  width: 120px;
 }
 
 body input {
- font-size: 1em;
+  width: 175px;
+  height: 60px;
+ font-size: 2em;
 }
 
 h1 {
   color: blue;
+}
+
+body {
+  text-align: center;
+  top: 20px;
 }

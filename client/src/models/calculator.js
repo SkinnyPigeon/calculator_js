@@ -24,14 +24,10 @@ Calculator.prototype = {
       return this.result;
     }
     catch( err ) {
-      window.alert( "Unexpected Character" );
+      alert( "Unexpected Character" );
       return this.result;
     }
-
-  },
-
-
-
+  }
 }
 
 module.exports = Calculator;
