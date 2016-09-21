@@ -65,16 +65,4 @@ describe( "The Calculator: ", function() {
     assert.deepEqual( NaN, calc.equals() );
   });
 
-
 });
-
-
-
-
-
-
-
-
-
-
-

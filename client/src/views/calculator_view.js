@@ -76,8 +76,6 @@ CalculatorView.prototype = {
     }.bind( this );
 
   this.calculatorSpace.appendChild( this.screen );
-
-
   },
 
   handleNumberButtonClick: function( id ) {
@@ -85,7 +83,6 @@ CalculatorView.prototype = {
     this.screen.value = this.currentScreen + id;
     this.calculatorSpace.appendChild( this.screen );
   }
-
 }
 
 module.exports = CalculatorView;
